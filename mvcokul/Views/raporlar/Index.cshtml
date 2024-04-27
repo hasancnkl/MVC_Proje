@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/mainlayout.cshtml";
+}
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ÖĞRENCİ NO</th>
+                        <th>ÖĞRENCİ ADI</th>
+                        <th>ÖĞRENCİ SOYADI</th>
+                        <th>MEZUNİYET</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                </tbody>
+            </table>
+            <div class="text-center">
+                <a href="/musteri/Yenimusteri/" class="btn btn-primary">Mezunlar</a>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ÖĞRETMEN NO</th>
+                        <th>ÖĞRETMEN ADI</th>
+                        <th>ÖĞRETMEN SOYADI</th>
+                        <th>EMEKLİlik durumu</th>
+                        <th>BOLUMU</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null)
+                    {
+                        foreach (var ogr in Model)
+                        {
+                    <tr>
+                        <th>@ogr.ogretid</th>
+                        <td>@ogr.ogretmenadi</td>
+                        <th>@ogr.ogretmensoyadi</th>
+                        <td>@ogr.emekli</td>
+                        <th>@ogr.bolumid</th>
+                    </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="text-center">
+                <a href="/emekliogretmenler/" class="btn btn-primary">Emekli Öğretmenler</a>
+            </div>
+        </div>
+    </div>
+</div>

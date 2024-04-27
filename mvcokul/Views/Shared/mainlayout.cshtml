@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Custom CSS for navbar */
+        .navbar-default {
+            background-color: #337ab7; /* Change the background color */
+            border-color: #2e6da4; /* Change the border color */
+        }
+
+            .navbar-default .navbar-brand {
+                color: #ffffff; /* Change the brand (logo) color */
+            }
+
+            .navbar-default .navbar-nav > li > a {
+                color: #ffffff; /* Change the links color */
+            }
+
+                .navbar-default .navbar-nav > li > a:hover,
+                .navbar-default .navbar-nav > li > a:focus {
+                    background-color: #286090; /* Change the hover/focus background color */
+                }
+
+            .navbar-default .navbar-nav > .active > a,
+            .navbar-default .navbar-nav > .active > a:hover,
+            .navbar-default .navbar-nav > .active > a:focus {
+                background-color: #1e90ff; /* Change the active link background color */
+            }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MYO</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/ogrenciler/Index/"> Öğrenciler</a></li>
+                <li><a href="/personel/Index/">Akademik Personel</a></li>
+                <li><a href="/idari/Index/">İdari Personel</a></li>
+                <li><a href="/raporlar/Index/">Raporlar</a></li>
+                <li><a href="/admin/Index/">Admin Giriş</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        @RenderBody()
+    </div>
+
+</body>
+</html>

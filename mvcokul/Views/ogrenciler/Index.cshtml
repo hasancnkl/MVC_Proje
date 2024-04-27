@@ -1,0 +1,38 @@
+﻿
+@Model List<ogrenci>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/mainlayout.cshtml";
+    }
+
+    <table class="table table-bordered">
+        <tr>
+            <th>OGRENCI ID</th>
+            <th>OGRENCİ ADI</th>
+            <th>OGRENCİ SOYADİ</th>
+            <th>MEZUNİYET</th>
+            <th>KREDİ</th>
+            <th>BOLUM ADİ</th>
+
+        </tr>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var ogr in Model)
+                {
+                    <tr>
+                        <th>@ogr.ogrid</th>
+                        <td>@ogr.ogradi</td>
+                        <th>@ogr.ogrsoyadi</th>
+                        <td>@ogr.mezuniyet</td>
+                        <th>@ogr.kredi</th>
+                        <td>@ogr.bolumid</td>
+                        <td><a href="/ogrenciler/SIL/@ogr.ogrid" class="btn btn-danger">SİL</a></td>
+                        <td><a href="/ogrenciler/KategoriGetir/@ogr.ogrid" class="btn btn-success">GÜNCELLE</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <a href="/ogrenciler/Yenikategori/" class="btn btn-primary">YENI OGRENCİ EKLE</a>
+

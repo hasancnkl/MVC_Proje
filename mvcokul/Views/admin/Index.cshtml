@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Admin Girişi";
+    Layout = "~/Views/Shared/mainlayout.cshtml";
+}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h2 class="text-center">Admin Girişi</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <form action="/Account/Login" method="post">
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Kullanıcı Adı:</label>
+                                    <input type="text" class="form-control" id="username" name="username">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Şifre:</label>
+                                    <input type="password" class="form-control" id="password" name="password">
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Giriş Yap</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

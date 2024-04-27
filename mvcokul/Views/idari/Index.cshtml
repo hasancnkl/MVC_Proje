@@ -1,0 +1,36 @@
+﻿
+@Model List<admin>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Views/Shared/mainlayout.cshtml";
+    }
+
+    <table class="table table-bordered">
+        <tr>
+            <th>İDARİ ID</th>
+            <th>İDARİ ADI</th>
+            <th>İDARİ SOYADİ</th>
+
+
+        </tr>
+        <tbody>
+            @if (Model != null)
+            {
+                foreach (var admin in Model)
+                {
+                    <tr>
+                        <th>@admin.adminid</th>
+                        <th>@admin.adminadi</th>
+                        <th>@admin.adminsoyadi</th>
+
+                        <td><a href="/ogrenciler/SIL/@admin.adminid" class="btn btn-danger">SİL</a></td>
+                        <td><a href="/ogrenciler/KategoriGetir/@admin.adminid" class="btn btn-success">GÜNCELLE</a></td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <a href="/ogrenciler/Yenikategori/" class="btn btn-primary">YENI OGRENCİ EKLE</a>
+
+
+
